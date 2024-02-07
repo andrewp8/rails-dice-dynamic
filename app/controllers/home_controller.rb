@@ -35,4 +35,15 @@ class HomeController <ApplicationController
     render({template: "dices_templates/five_4"})
   end
 
+  def random_side_dices
+    @rolls = []
+    @random_dice = params.fetch("random_dice").to_i
+    @random_sides = params.fetch("random_sides").to_i
+    @random_dice.times do
+      dice = rand(1..@random_sides)
+      @rolls.push(dice)
+    end
+    render({template: "dices_templates/random_dice_sides"})
+  end
+
 end
