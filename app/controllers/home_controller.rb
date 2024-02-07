@@ -26,4 +26,13 @@ class HomeController <ApplicationController
     render({template: "dices_templates/one_20"})
   end
 
+  def five_4
+    @rolls = []
+    5.times do
+      dice = rand(1..4)
+      @rolls.push(dice)
+    end
+    render({template: "dices_templates/five_4"})
+  end
+
 end
