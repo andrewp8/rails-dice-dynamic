@@ -21,4 +21,9 @@ class HomeController <ApplicationController
     render({template: "dices_templates/two_10"})
   end
 
+  def one_20
+    @roll = rand(1..20)
+    render({template: "dices_templates/one_20"})
+  end
+
 end
